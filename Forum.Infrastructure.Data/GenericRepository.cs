@@ -1,11 +1,11 @@
-﻿using Forum.DAL.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using Forum.Domain.Interfaces;
 
-namespace Forum.DAL
+namespace Forum.Infrastructure.Data
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
@@ -20,7 +20,7 @@ namespace Forum.DAL
         }
 
         #region IDisposable Support
-       
+
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
@@ -33,12 +33,6 @@ namespace Forum.DAL
             }
         }
 
-        // TODO: переопределить метод завершения, только если Dispose(bool disposing) выше включает код для освобождения неуправляемых ресурсов.
-        // ~GenericRepository() {
-        //   // Не изменяйте этот код. Разместите код очистки выше, в методе Dispose(bool disposing).
-        //   Dispose(false);
-        // }
-        
         public void Dispose()
         {
             Dispose(true);
@@ -96,7 +90,7 @@ namespace Forum.DAL
             return includeProperties
                 .Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
         }
-
+        
         #endregion
     }
 }
