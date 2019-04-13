@@ -3,9 +3,9 @@ using Forum.Infrastructure.Data.Context;
 
 namespace Forum.Infrastructure.Data.Repositories
 {
-    public class UserRepository : GenericRepository<User>
+    public class ClientProfileRepository : GenericRepository<ClientProfile>
     {
-        public UserRepository(ForumContext context) : base(context)
+        public ClientProfileRepository(ForumContext context) : base(context)
         {
 
         }

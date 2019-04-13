@@ -181,9 +181,9 @@
       <Project>{2c67c60b-b373-4b19-9679-5cda62587bfc}</Project>
       <Name>Forum.Domain.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Forum.Domain.Interfaces\Forum.Domain.Interfaces.csproj">
-      <Project>{81e03fa6-9b18-4f37-bffb-2f373c2105d9}</Project>
-      <Name>Forum.Domain.Interfaces</Name>
+    <ProjectReference Include="..\Forum.Infrastructure.Business\Forum.Infrastructure.Business.csproj">
+      <Project>{cf3a7ce6-fead-462f-a1dc-93c11cb097ce}</Project>
+      <Name>Forum.Infrastructure.Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\Forum.Services.Interfaces\Forum.Services.Interfaces.csproj">
       <Project>{2e70da54-9f6f-47b4-a5ad-e2aa914dc35b}</Project>

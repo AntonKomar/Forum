@@ -48,10 +48,17 @@
       <Project>{2c67c60b-b373-4b19-9679-5cda62587bfc}</Project>
       <Name>Forum.Domain.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Forum.Infrastructure.Data\Forum.Infrastructure.Data.csproj">
+      <Project>{1ab8bfd4-154b-4f26-af64-7d1929806f5f}</Project>
+      <Name>Forum.Infrastructure.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Forum.Services.Interfaces\Forum.Services.Interfaces.csproj">
       <Project>{2e70da54-9f6f-47b4-a5ad-e2aa914dc35b}</Project>
       <Name>Forum.Services.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
