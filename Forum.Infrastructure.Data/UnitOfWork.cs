@@ -11,12 +11,15 @@ namespace Forum.Infrastructure.Data
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly ForumContext _context;
+
         private IGenericRepository<Message> _messageRepository;
         private IGenericRepository<ClientProfile> _clientProfileRepository;
         private IGenericRepository<Subject> _subjectRepository;
         private IGenericRepository<Category> _categoryRepository;
         private IAppIdentity _userManager;
         private IAppIdentity _roleManager;
+
+        #region Public properties
 
         public UnitOfWork()
         {
@@ -53,10 +56,14 @@ namespace Forum.Infrastructure.Data
             get { return _roleManager ?? (_roleManager = new AppRoleManager(new RoleStore<ApplicationRole>())); }
         }
 
+        #endregion
+
         public async Task SaveAsync()
         {
             await _context.SaveChangesAsync();
         }
+
+        #region IDisposable implementation
 
         private bool disposed = false;
 
@@ -77,5 +84,7 @@ namespace Forum.Infrastructure.Data
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        #endregion
     }
 }

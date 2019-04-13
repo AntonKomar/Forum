@@ -19,7 +19,7 @@ namespace Forum.Domain.Core.Entities
         public string Email { get; set; }
         public DateTime Date { get; set; }
         public string Password { get; set; }
-        public string Messages { get; set; }
+        public int? Messages { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
 
