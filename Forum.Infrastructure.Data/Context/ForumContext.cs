@@ -9,7 +9,11 @@ namespace Forum.Infrastructure.Data.Context
         public ForumContext()
             : base("forum")
         { }
-        
+
+        public ForumContext(string connectionString)
+            : base(connectionString)
+        { }
+
         public static ForumContext Create()
         {
             return new ForumContext();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Forum.Infrastructure.Data.Identity
 {
-    public class AppUserManager : UserManager<ApplicationUser>, IAppIdentity
+    public class AppUserManager : UserManager<ApplicationUser>
     {
         public AppUserManager(IUserStore<ApplicationUser> store)
                 : base(store)

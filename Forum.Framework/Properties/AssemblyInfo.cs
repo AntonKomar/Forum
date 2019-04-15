@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Forum.Services.Interfaces")]
+[assembly: AssemblyTitle("Forum.Framework")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Forum.Services.Interfaces")]
+[assembly: AssemblyProduct("Forum.Framework")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("2e70da54-9f6f-47b4-a5ad-e2aa914dc35b")]
+[assembly: Guid("39be4425-ba5f-4d2d-a5bc-8d216c18879c")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

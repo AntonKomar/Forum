@@ -1,5 +1,5 @@
 ﻿using Forum.App_Start;
-using Forum.Util;
+using Forum.Framework;
 using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Mvc;
