@@ -2,6 +2,7 @@
 using Forum.Domain.Interfaces;
 using Forum.Infrastructure.Data.Context;
 using Forum.Infrastructure.Data.Identity;
+using Forum.Infrastructure.Data.Repositories;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace Forum.Infrastructure.Data
         private IGenericRepository<ClientProfile> _clientProfileRepository;
         private IGenericRepository<Subject> _subjectRepository;
         private IGenericRepository<Category> _categoryRepository;
-        private IAppIdentity _userManager;
-        private IAppIdentity _roleManager;
+        private object _userManager;
+        private object _roleManager;
 
         #region Public properties
 
@@ -28,30 +29,30 @@ namespace Forum.Infrastructure.Data
 
         public IGenericRepository<Message> MessageRepository
         {
-            get { return _messageRepository ?? (_messageRepository = new GenericRepository<Message>(_context)); }
+            get { return _messageRepository ?? (_messageRepository = new MessageRepository(_context)); }
         }
 
         public IGenericRepository<ClientProfile> ClientProfileRepository
         {
-            get { return _clientProfileRepository ?? (_clientProfileRepository = new GenericRepository<ClientProfile>(_context)); }
+            get { return _clientProfileRepository ?? (_clientProfileRepository = new ClientProfileRepository(_context)); }
         }
 
         public IGenericRepository<Subject> SubjectRepository
         {
-            get { return _subjectRepository ?? (_subjectRepository = new GenericRepository<Subject>(_context)); }
+            get { return _subjectRepository ?? (_subjectRepository = new SubjectRepository(_context)); }
         }
 
         public IGenericRepository<Category> CategoryRepository
         {
-            get { return _categoryRepository ?? (_categoryRepository = new GenericRepository<Category>(_context)); }
+            get { return _categoryRepository ?? (_categoryRepository = new CategoryRepository(_context)); }
         }
 
-        public IAppIdentity UserManager
+        public object UserManager
         {
             get { return _userManager ?? (_userManager = new AppUserManager(new UserStore<ApplicationUser>())); }
         }
 
-        public IAppIdentity RoleManager
+        public object RoleManager
         {
             get { return _roleManager ?? (_roleManager = new AppRoleManager(new RoleStore<ApplicationRole>())); }
         }

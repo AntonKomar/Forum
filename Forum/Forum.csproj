@@ -185,10 +185,6 @@
       <Project>{cf3a7ce6-fead-462f-a1dc-93c11cb097ce}</Project>
       <Name>Forum.Infrastructure.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Forum.Services.Interfaces\Forum.Services.Interfaces.csproj">
-      <Project>{2e70da54-9f6f-47b4-a5ad-e2aa914dc35b}</Project>
-      <Name>Forum.Services.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

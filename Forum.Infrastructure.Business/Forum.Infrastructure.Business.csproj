@@ -31,7 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,25 +54,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="OperationDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forum.Domain.Core\Forum.Domain.Core.csproj">
       <Project>{2c67c60b-b373-4b19-9679-5cda62587bfc}</Project>
       <Name>Forum.Domain.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Forum.Domain.Interfaces\Forum.Domain.Interfaces.csproj">
+      <Project>{81E03FA6-9B18-4F37-BFFB-2F373C2105D9}</Project>
+      <Name>Forum.Domain.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Forum.Infrastructure.Data\Forum.Infrastructure.Data.csproj">
       <Project>{1ab8bfd4-154b-4f26-af64-7d1929806f5f}</Project>
       <Name>Forum.Infrastructure.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Forum.Services.Interfaces\Forum.Services.Interfaces.csproj">
-      <Project>{2e70da54-9f6f-47b4-a5ad-e2aa914dc35b}</Project>
-      <Name>Forum.Services.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
-    <Folder Include="DTO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

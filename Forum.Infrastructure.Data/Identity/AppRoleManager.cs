@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Forum.Infrastructure.Data.Identity
 {
-    public class AppRoleManager : RoleManager<ApplicationRole> , IAppIdentity
+    public class AppRoleManager : RoleManager<ApplicationRole> 
     {
         public AppRoleManager(RoleStore<ApplicationRole> store)
                     : base(store)
