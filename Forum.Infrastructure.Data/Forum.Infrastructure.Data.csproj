@@ -58,6 +58,11 @@
     <Compile Include="GenericRepository.cs" />
     <Compile Include="Identity\AppRoleManager.cs" />
     <Compile Include="Identity\AppUserManager.cs" />
+    <Compile Include="Migrations\201904152048425_Some_changes.cs" />
+    <Compile Include="Migrations\201904152048425_Some_changes.Designer.cs">
+      <DependentUpon>201904152048425_Some_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\ClientProfileRepository.cs" />
@@ -78,6 +83,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904152048425_Some_changes.resx">
+      <DependentUpon>201904152048425_Some_changes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
