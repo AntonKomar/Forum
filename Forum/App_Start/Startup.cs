@@ -1,5 +1,5 @@
-﻿using Forum.Infrastructure.Business.Interfaces;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
@@ -12,15 +12,12 @@ namespace Forum.App_Start
 {
     public class Startup
     {
-        IUserService userService;
-        public void Configuration(IAppBuilder app)
+        public void ConfigureAuth(IAppBuilder app)
         {
-            //Error 
-            //app.CreatePerOwinContext<IUserService>(userService); 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Login"),
+                LoginPath = new PathString("/Account/Login"),
             });
         }
     }
