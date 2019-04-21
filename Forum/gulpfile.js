@@ -1,28 +1,40 @@
-var path = require('path');
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var msbuild = require("gulp-msbuild");
-var iisexpress = require('gulp-serve-iis-express');
-var browserSync = require('browser-sync').create();
+let path = require('path');
+let gulp = require('gulp');
+let plumber = require('gulp-plumber');
+let msbuild = require("gulp-msbuild");
+let iisexpress = require('gulp-serve-iis-express');
+let browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
 
-var PORT = '62896';
-var sources = [
+let PORT = '62896';
+let sources = [
     'Controllers/*.cs',
     'Helpers/*.cs',
     'ViewModels/**/*.cs'
 ];
-var views = [
+let views = [
     'Views/**/*.cshtml',
 ];
+let source_sass = [
+    'Content/scss/*.scss',
+];
 
-gulp.task('default', ['server', 'build'], function () {
+gulp.task('default', ['server', 'build','sass'], function () {
     browserSync.init({
         proxy: 'http://localhost:' + PORT,
         notify: false,
         ui: false
     });
     gulp.watch(sources, ['build']);
+    gulp.watch(source_sass, ['sass']);
     return gulp.watch(views, ['reload']);
+});
+
+gulp.task('sass', function () {
+    gulp.src(source_sass)
+        .pipe(sass())
+        .pipe(gulp.dest('./Content'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('reload', function () {
@@ -35,11 +47,12 @@ gulp.task('build', function () {
         .pipe(msbuild({
             toolsVersion: 'auto',
             logCommand: true
-        }));
+        }))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('server', function () {
-    var configPath = path.join(__dirname, '..\\.vs\\config\\applicationhost.config');
+    let configPath = path.join(__dirname, '..\\.vs\\config\\applicationhost.config');
     iisexpress({
         siteNames: ['Forum'],
         configFile: configPath,

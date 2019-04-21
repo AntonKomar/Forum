@@ -10,19 +10,23 @@ namespace Forum.Infrastructure.Data.Context
             : base("forum")
         { }
 
-        public ForumContext(string connectionString)
-            : base(connectionString)
-        { }
-
         public static ForumContext Create()
         {
             return new ForumContext();
         }
 
-        public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Message> Messages { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<ClientProfile> ClientProfiles { get; set; }
-        
+        public virtual DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<ClientProfile> ClientProfiles { get; set; }
+
+        private void FixEfProviderServicesProblem()
+        {
+            // The Entity Framework provider type 'System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer'
+            // for the 'System.Data.SqlClient' ADO.NET provider could not be loaded. 
+            // Make sure the provider assembly is available to the running application. 
+            // See http://go.microsoft.com/fwlink/?LinkId=260882 for more information.
+            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+        }
     }
 }
