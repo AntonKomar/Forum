@@ -1,0 +1,10 @@
+.category{
+    justify-content: space-between;
+}
+
+.category a{
+    @include button(rgb(26, 90, 69));
+    color: white;
+    width: 200px;
+    text-align: center;
+}

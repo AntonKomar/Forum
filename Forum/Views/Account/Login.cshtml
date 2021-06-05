@@ -1,0 +1,63 @@
+﻿@using Forum.ViewModels
+@model LoginViewModel
+
+@{
+  ViewBag.Title = "Ввойти";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="sign_text">
+  <h2 class="sign_big">Войти</h2>
+  <div class="noAccount">
+    <p>У вас нет аккаунта? <a href="@Url.Action("Register","Account")"> Регистрация</a></p>
+  </div>
+</div>
+
+<div class="forms">
+  <form class="form signIn_form" method="post" action="Login">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new {})
+    <div class="inp margin-bottom">
+      <h3>Имя пользователя или email-адрес <span>ОБЯЗАТЕЛЬНО</span></h3>
+      <input type="text" placeholder="Имя пользователя или email-адрес" name="Email" />
+    </div>
+    <div class="inp margin-bottom">
+      <h3>Пароль <span>ОБЯЗАТЕЛЬНО</span></h3>
+      <input type="password" placeholder="Пароль" name="Password" />
+    </div>
+    <div class="flex margin-bottom point">
+      <input type="checkbox" name="remember_me" value="1" checked aria-checked="true" />
+      <div>
+        <p>Запомнить меня</p>
+        <p class="descript">Не рекомендуеться на общедоступных компьютерах</p>
+      </div>
+    </div>
+    <div class="flex margin-bottom">
+      <input type="checkbox" name="remember_me" value="1" aria-checked="false" />
+      <p>Войти анонимно</p>
+    </div>
+    <div class="flex column_but">
+      <input type="submit" class="signIn_button" value="Войти"/>
+      <a class="forget_pass" href="#">Забыли пароль?</a>
+    </div>
+  </form>
+
+  <div class="form quickSignIn_form">
+    <div>
+      <h2>Быстрый вход</h2>
+      <p class="serv_text">Или войдите с помощью этих сервисов</p>
+    </div>
+    <a href="#">
+      <div class="service service_1 flex">
+        <i class="fab fa-facebook-square"></i>
+        <p>Войти через Facebook</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="service service_2 flex">
+        <i class="fab fa-twitter"></i>
+        <p>Войти через Twitter</p>
+      </div>
+    </a>
+  </div>
+</div>

@@ -49,12 +49,12 @@ namespace Forum.Infrastructure.Data
 
         public object UserManager
         {
-            get { return _userManager ?? (_userManager = new AppUserManager(new UserStore<ApplicationUser>())); }
+            get { return _userManager ?? (_userManager = new AppUserManager(new UserStore<ApplicationUser>(_context))); }
         }
 
         public object RoleManager
         {
-            get { return _roleManager ?? (_roleManager = new AppRoleManager(new RoleStore<ApplicationRole>())); }
+            get { return _roleManager ?? (_roleManager = new AppRoleManager(new RoleStore<ApplicationRole>(_context))); }
         }
 
         #endregion

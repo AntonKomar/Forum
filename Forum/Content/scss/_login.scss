@@ -1,0 +1,142 @@
+.sign_text {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.sign_big {
+  font-weight: 300;
+  font-size: 3em;
+}
+
+.noAccount p {
+  color: lighten($background-color, 30%)
+}
+
+.forms {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+}
+
+%border {
+  border: 1px solid lighten($background-color, 55%);
+  border-radius: 5px;
+}
+
+.form {
+  @extend %border;
+  padding: 20px 15px;
+  background-color: white;
+}
+
+.signIn_form {
+  width: 100%;
+}
+
+.quickSignIn_form {
+  margin-left: 15px;
+}
+
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+.inp {
+  font-size: 0.85em
+}
+
+%required {
+  color: red;
+  font-size: 0.7em;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+
+.inp span {
+    @extend %required;
+}
+
+.require {
+    @extend %required;
+}
+
+.inp input {
+  @extend %border;
+  width: -webkit-fill-available;
+  padding: 5px;
+}
+
+.inp h3 {
+  margin-bottom: 5px;
+}
+
+.flex input {
+  margin-right: 5px;
+}
+
+.signIn_button {
+  @include button($background-color);
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.column_but {
+  flex-direction: column;
+}
+
+.column_but:last-of-type {
+  align-items: flex-end;
+  margin-bottom: 10px;
+  font-size: 0.7em;
+}
+
+.point {
+  align-items: flex-start;
+}
+
+.descript {
+  color: lighten($background-color, 40%);
+  font-size: 0.7em;
+}
+
+.quickSignIn_form h2 {
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+.serv_text {
+  color: lighten($background-color, 40%);
+  font-size: 1.0em;
+}
+
+.service {
+  width: 350px;
+  color: white;
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+.service i {
+  font-size: 1.5em;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.service p {
+  width: 100%;
+  text-align: center;
+}
+
+.service_1 {
+  @include button(#3a579a);
+  padding: 0;
+}
+
+.service_2 {
+  @include button(#00abf0);
+  padding: 0;
+}

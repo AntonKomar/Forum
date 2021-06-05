@@ -1,0 +1,29 @@
+@media screen and (max-width: 780px) {
+    .forms {
+        flex-flow: column;
+    }
+
+    .signIn_form {
+        width: -webkit-fill-available;
+    }
+
+    .quickSignIn_form {
+        width: -webkit-fill-available;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .head_signIn {
+        display: none;
+    }
+
+    .menu{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .service {
+        width: -webkit-fill-available;
+    }
+}

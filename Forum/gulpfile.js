@@ -4,7 +4,7 @@ let plumber = require('gulp-plumber');
 let msbuild = require("gulp-msbuild");
 let iisexpress = require('gulp-serve-iis-express');
 let browserSync = require('browser-sync').create();
-var sass = require('gulp-sass');
+let sass = require('gulp-sass');
 
 let PORT = '62896';
 let sources = [
@@ -14,12 +14,13 @@ let sources = [
 ];
 let views = [
     'Views/**/*.cshtml',
+    'Content/main.js',
 ];
 let source_sass = [
     'Content/scss/*.scss',
 ];
 
-gulp.task('default', ['server', 'build','sass'], function () {
+gulp.task('default', ['server', 'build', 'sass'], function () {
     browserSync.init({
         proxy: 'http://localhost:' + PORT,
         notify: false,
@@ -30,12 +31,15 @@ gulp.task('default', ['server', 'build','sass'], function () {
     return gulp.watch(views, ['reload']);
 });
 
-gulp.task('sass', function () {
-    gulp.src(source_sass)
-        .pipe(sass())
-        .pipe(gulp.dest('./Content'))
-        .pipe(browserSync.stream());
-});
+
+gulp.task('sass', () => {
+    return setTimeout(() => {
+        return gulp.src(source_sass)
+            .pipe(sass({ includePaths: ['Content/scss'] }))
+            .pipe(gulp.dest('./Content'))
+            .pipe(browserSync.stream())   //if you use browser-sync
+    }, 500)
+})
 
 gulp.task('reload', function () {
     browserSync.reload();

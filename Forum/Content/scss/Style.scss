@@ -1,28 +1,88 @@
-
+$background-color: #353c41;
+$color-1: white;
+$color-2: black;
+$color-3: $background-color;
+$font-stack: "Roboto",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
 
 body {
-    padding-top: 300px;
-    padding-bottom: 20px;
-    color:white;
+  margin: 0;
+  font-family: $font-stack;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
-.purple{
-    background-color:#5d11c1
+a {
+  text-decoration: none;
 }
 
-.grey{
-    background-color:#c4c4c4
+.content {
+  background-color: lighten($background-color, 75%);
+  padding: 20px;
+  color: $background-color;
 }
+
+@mixin button($background-button-color) {
+  background-color: lighten($background-button-color, 10%);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:hover {
+    background-color: lighten($background-button-color, 20%);
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+footer .flex{
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lang{
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.row{
+  display: flex;
+}
+
+.row a{
+  color: inherit;
+}
+
+.row p{
+  cursor: pointer;
+}
+
+.bottom{
+  color: lighten($background-color, 40%);
+  font-size: 0.8em;
+}
+
+@import 'header.scss';
+@import 'index.scss';
+@import 'login.scss';
+@import 'register.scss';
+@import 'media.scss';

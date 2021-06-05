@@ -15,7 +15,7 @@ namespace Forum.Controllers
 {
     public class AccountController : Controller
     {
-        private IUserService UserService { get; }
+        private IUserService _userService { get; }
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -27,7 +27,7 @@ namespace Forum.Controllers
 
         public AccountController(IUserService userService)
         {
-            UserService = userService;
+            _userService = userService;
         }
         
         public ActionResult Login()
@@ -43,7 +43,7 @@ namespace Forum.Controllers
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO { Email = model.Email, Password = model.Password };
-                ClaimsIdentity claim = await UserService.Authenticate(userDto);
+                ClaimsIdentity claim = await _userService.Authenticate(userDto);
                 if (claim == null)
                 {
                     ModelState.AddModelError("", "Неверный логин или пароль.");
@@ -87,7 +87,7 @@ namespace Forum.Controllers
                     Name = model.Name,
                     Role = "user"
                 };
-                OperationDetails operationDetails = await UserService.Create(userDto);
+                OperationDetails operationDetails = await _userService.Create(userDto);
                 if (operationDetails.Succedeed)
                     return View("SuccessRegister");
                 else
@@ -98,14 +98,15 @@ namespace Forum.Controllers
 
         private async Task SetInitialDataAsync()
         {
-            await UserService.SetInitialData(new UserDTO
+            await _userService.SetInitialData(new UserDTO
             {
-                Email = "somemail@mail.ru",
-                UserName = "somemail@mail.ru",
-                Password = "ad46D_ewr3",
+                Email = "anton.komar2979@gmail.com",
+                UserName = "anton.komar2979@gmail.com",
+                Password = "111111",
                 Name = "Семен Семенович Горбунков",
                 Address = "ул. Спортивная, д.30, кв.75",
                 Role = "admin",
+                CreationDate = DateTime.Now,
             }, new List<string> { "user", "admin" });
         }
     }

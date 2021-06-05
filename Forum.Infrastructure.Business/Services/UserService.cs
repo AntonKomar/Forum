@@ -4,7 +4,6 @@ using Forum.Infrastructure.Business.DTO;
 using Forum.Infrastructure.Business.Interfaces;
 using Forum.Infrastructure.Data.Identity;
 using Microsoft.AspNet.Identity;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -63,7 +62,7 @@ namespace Forum.Infrastructure.Business.Services
         // start inialization of db
         public async Task SetInitialData(UserDTO adminDto, List<string> roles)
         {
-            var appRoleManager = (AppRoleManager)Database.UserManager;
+            var appRoleManager = (AppRoleManager)Database.RoleManager;
 
             foreach (string roleName in roles)
             {

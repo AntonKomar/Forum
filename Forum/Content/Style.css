@@ -1,21 +1,245 @@
 body {
-  padding-top: 300px;
-  padding-bottom: 20px;
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+.content {
+  background-color: #fafafb;
+  padding: 20px;
+  color: #353c41; }
+
+.flex {
+  display: flex;
+  align-items: center; }
+
+footer .flex {
+  flex-direction: column;
+  justify-content: center; }
+
+.lang {
+  margin-right: 20px;
+  margin-bottom: 10px; }
+
+.row {
+  display: flex; }
+
+.row a {
+  color: inherit; }
+
+.row p {
+  cursor: pointer; }
+
+.bottom {
+  color: #97a3ab;
+  font-size: 0.8em; }
+
+header {
+  background-color: #353c41; }
+
+header a {
   color: white; }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-  padding-left: 15px;
-  padding-right: 15px; }
+.head {
+  justify-content: space-between;
+  color: white;
+  padding: 20px; }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-  max-width: 280px; }
+.logo p {
+  font-weight: 300;
+  font-size: 1.8em;
+  margin-right: 10px; }
 
-.purple {
-  background-color: #5d11c1; }
+.logo i {
+  font-size: 1.4em; }
 
-.grey {
-  background-color: #c4c4c4; }
+.head_signIn {
+  font-size: 1.0em; }
+
+.signIn {
+  margin-right: 15px; }
+
+.reg {
+  background-color: #4c565d;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .reg:hover {
+    background-color: #637079; }
+
+.menu {
+  cursor: pointer;
+  display: none; }
+
+.menu i {
+  color: white; }
+
+.category {
+  justify-content: space-between; }
+
+.category a {
+  background-color: #258263;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  width: 200px;
+  text-align: center; }
+  .category a:hover {
+    background-color: #31a982; }
+
+.sign_text {
+  text-align: center;
+  padding-bottom: 20px; }
+
+.sign_big {
+  font-weight: 300;
+  font-size: 3em; }
+
+.noAccount p {
+  color: #7b8a94; }
+
+.forms {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start; }
+
+.form, .inp input {
+  border: 1px solid #c2c8cd;
+  border-radius: 5px; }
+
+.form {
+  padding: 20px 15px;
+  background-color: white; }
+
+.signIn_form {
+  width: 100%; }
+
+.quickSignIn_form {
+  margin-left: 15px; }
+
+.margin-bottom {
+  margin-bottom: 15px; }
+
+.inp {
+  font-size: 0.85em; }
+
+.inp span, .require {
+  color: red;
+  font-size: 0.7em;
+  font-weight: lighter;
+  margin-left: 10px; }
+
+.inp input {
+  width: -webkit-fill-available;
+  padding: 5px; }
+
+.inp h3 {
+  margin-bottom: 5px; }
+
+.flex input {
+  margin-right: 5px; }
+
+.signIn_button {
+  background-color: #4c565d;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px; }
+  .signIn_button:hover {
+    background-color: #637079; }
+
+.column_but {
+  flex-direction: column; }
+
+.column_but:last-of-type {
+  align-items: flex-end;
+  margin-bottom: 10px;
+  font-size: 0.7em; }
+
+.point {
+  align-items: flex-start; }
+
+.descript {
+  color: #97a3ab;
+  font-size: 0.7em; }
+
+.quickSignIn_form h2 {
+  font-weight: 400;
+  font-size: 1.4em; }
+
+.serv_text {
+  color: #97a3ab;
+  font-size: 1.0em; }
+
+.service {
+  width: 350px;
+  color: white;
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 0.8em; }
+
+.service i {
+  font-size: 1.5em;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2); }
+
+.service p {
+  width: 100%;
+  text-align: center; }
+
+.service_1 {
+  background-color: #4c6dbb;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 0; }
+  .service_1:hover {
+    background-color: #718bc9; }
+
+.service_2 {
+  background-color: #24c0ff;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 0; }
+  .service_2:hover {
+    background-color: #57cfff; }
+
+@media screen and (max-width: 780px) {
+  .forms {
+    flex-flow: column; }
+  .signIn_form {
+    width: -webkit-fill-available; }
+  .quickSignIn_form {
+    width: -webkit-fill-available;
+    margin-left: 0;
+    margin-top: 15px; }
+  .head_signIn {
+    display: none; }
+  .menu {
+    display: block; } }
+
+@media screen and (max-width: 450px) {
+  .service {
+    width: -webkit-fill-available; } }

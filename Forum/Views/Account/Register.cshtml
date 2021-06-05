@@ -1,0 +1,69 @@
+﻿@using Forum.ViewModels
+@model RegisterViewModel
+
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="sign_text">
+    <h2 class="sign_big">Регистрация</h2>
+    <div class="noAccount">
+        <p>У вас уже есть аккаунт? <a href="@Url.Action("Login","Account")">Войти</a></p>
+    </div>
+</div>
+
+<div class="forms">
+    <form class="form signIn_form">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new {})
+        <div class="inp margin-bottom">
+            <h3>Имя пользователя<span>ОБЯЗАТЕЛЬНО</span></h3>
+            <input type="text" placeholder="Имя пользователя" name="Name" />
+        </div>
+        <div class="inp margin-bottom">
+            <h3>Email-адрес<span>ОБЯЗАТЕЛЬНО</span></h3>
+            <input type="text" placeholder="Email-адрес" name="Email" />
+        </div>
+        <div class="inp margin-bottom">
+            <h3>Пароль<span>ОБЯЗАТЕЛЬНО</span></h3>
+            <input type="password" placeholder="Пароль" name="Password" />
+        </div>
+        <div class="inp margin-bottom">
+            <h3>Повторите пароль<span>ОБЯЗАТЕЛЬНО</span></h3>
+            <input type="password" placeholder="Пароль" name="Password" />
+        </div>
+        <div class="flex margin-bottom point">
+            <input type="checkbox" name="remember_me" value="1" checked aria-checked="true" />
+            <div>
+                <p>Отправлять мне новости и информацию</p>
+            </div>
+        </div>
+        <div class="flex margin-bottom">
+            <input type="checkbox" name="remember_me" value="1" aria-checked="false" />
+            <p>Я согласен c <a href="#">условиями использования </a><span class="require">ОБЯЗАТЕЛЬНО</span></p>
+        </div>
+        <div class="column_but flex">
+            <a class="signIn_button" href="#">Зарегестрироваться</a>
+        </div>
+    </form>
+
+    <div class="form quickSignIn_form">
+        <div>
+            <h2>Быстрый вход</h2>
+            <p class="serv_text">Или войдите с помощью этих сервисов</p>
+        </div>
+        <a href="#">
+            <div class="service service_1 flex">
+                <i class="fab fa-facebook-square"></i>
+                <p>Войти через Facebook</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="service service_2 flex">
+                <i class="fab fa-twitter"></i>
+                <p>Войти через Twitter</p>
+            </div>
+        </a>
+    </div>
+</div>

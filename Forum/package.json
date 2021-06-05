@@ -10,13 +10,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.14",
     "gulp": "^3.9.1",
     "gulp-iis-express": "^1.0.6",
-    "gulp-msbuild": "^0.5.5",
+    "gulp-msbuild": "^0.8.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
-    "gulp-serve-iis-express": "^1.0.0",
-    "node-sass": "^4.11.0"
+    "gulp-serve-iis-express": "^1.0.1",
+    "node-sass": "^4.14.1"
   }
 }

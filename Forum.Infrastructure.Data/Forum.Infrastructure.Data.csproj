@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Forum.Infrastructure.Data</RootNamespace>
     <AssemblyName>Forum.Infrastructure.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,9 +59,9 @@
     <Compile Include="GenericRepository.cs" />
     <Compile Include="Identity\AppRoleManager.cs" />
     <Compile Include="Identity\AppUserManager.cs" />
-    <Compile Include="Migrations\201904152048425_Some_changes.cs" />
-    <Compile Include="Migrations\201904152048425_Some_changes.Designer.cs">
-      <DependentUpon>201904152048425_Some_changes.cs</DependentUpon>
+    <Compile Include="Migrations\201905011302095_Initial_Create.cs" />
+    <Compile Include="Migrations\201905011302095_Initial_Create.Designer.cs">
+      <DependentUpon>201905011302095_Initial_Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,8 +86,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904152048425_Some_changes.resx">
-      <DependentUpon>201904152048425_Some_changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905011302095_Initial_Create.resx">
+      <DependentUpon>201905011302095_Initial_Create.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

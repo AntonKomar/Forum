@@ -1,40 +1,59 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+
+    <title>@ViewBag.Title - Forum</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     @Styles.Render("~/Content/css")
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top purple">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Form", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <header>
+        <div class="container flex head">
+            <a class="logo" href="@Url.Action("Index","Home")">
+                <div class="flex">
+                    <p>kyiv.com.ua</p>
+                    <i class="fas fa-star"></i>
+                </div>
+            </a>
+            <div class="flex head_signIn">
+                <a class="signIn" href="@Url.Action("Login","Account")">
+                    <p>Уже зарегестрированы? Войти</p>
+                </a>
+                <a class="reg" href="@Url.Action("Register","Account")">Регистрация</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <input name="q" type="text" placeholder="Search…" value="" autocomplete="off" maxlength="240" class="s-input js-search-field ">
-                    </li>
-                </ul>
+            <div class="menu">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            @RenderBody()
+        </div>
     </div>
+    <footer>
+        <div class="content">
+            <div class="container flex">
+                <div class="row">
+                    <p class="lang">Язык</p>
+                    <a href="#">Обратная связь</a>
+                </div>
+                <div class="bottom">
+                    <p>Powered by Komar Company</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer class="grey">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-    
-    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/js")
 </body>
+
 </html>

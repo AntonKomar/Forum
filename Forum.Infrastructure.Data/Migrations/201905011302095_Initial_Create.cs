@@ -3,7 +3,7 @@ namespace Forum.Infrastructure.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Some_changes : DbMigration
+    public partial class Initial_Create : DbMigration
     {
         public override void Up()
         {

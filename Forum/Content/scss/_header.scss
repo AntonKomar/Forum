@@ -1,0 +1,46 @@
+header {
+  background-color: $background-color;
+}
+
+header a {
+  color: $color-1;
+}
+
+.head {
+  justify-content: space-between;
+  color: $color-1;
+  padding: 20px;
+}
+
+.logo p {
+  font-weight: 300;
+  font-size: 1.8em;
+  margin-right: 10px;
+}
+
+.logo i {
+  font-size: 1.4em;
+}
+
+.head_signIn{
+    font-size: 1.0em;
+}
+
+.signIn {
+  margin-right: 15px;
+}
+
+.reg {
+  @include button($background-color);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu{
+    cursor: pointer;
+    display: none;
+}
+
+.menu i{
+    color: white;
+}
